@@ -17,7 +17,7 @@ class Database extends Singleton{
     private function open_connection()
     {
         try {
-            $this->_mysqli = new \mysqli("localhost","admin","admin4321","unique_api");
+            $this->_mysqli = new \mysqli("localhost","admin","Admin_4321","unique_api");
         } catch (\Exception $e) { // Exception handling
             echo 'ERROR:'.$e->getMessage();
         }
@@ -35,6 +35,13 @@ class Database extends Singleton{
 
         return false;
 
+    }
+
+    public function insert (string $sql, $params,string $argument)
+    {
+        $conn = $this->_mysqli->prepare($sql);
+        $conn->bind_param($argument, $params);
+        $conn->execute();
     }
 
 }
