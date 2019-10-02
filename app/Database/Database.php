@@ -37,11 +37,18 @@ class Database extends Singleton{
 
     }
 
-    public function insert (string $sql, $params,string $argument)
+    public function insert_users (string $sql, array $request,string $format)
     {
+
         $conn = $this->_mysqli->prepare($sql);
-        $conn->bind_param($argument, $params);
-        $conn->execute();
+        $conn->bind_param($format, $request[0], $request[1], $request[2], $request[3], $request[4], $request[5], $request[6], $request[7]);
+        return $conn->execute();
+    }
+
+    public function escape($esc)
+    {
+        $conn = $this->_mysqli->real_escape_string($esc);
+        return $conn;
     }
 
 }

@@ -116,6 +116,7 @@ class ComposerStaticInitff918005b247aaabddd91d34da707220
 
     public static $classMap = array (
         'App\\Model\\Users' => __DIR__ . '/../..' . '/app/Model/Users.php',
+        'Session' => __DIR__ . '/../..' . '/app/Session/Session.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
