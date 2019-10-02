@@ -45,6 +45,15 @@ class Database extends Singleton{
         return $conn->execute();
     }
 
+    public function update_users (string $sql, array $request, string $format){
+        $conn = $this->_mysqli->prepare($sql);
+        $conn->bind_param($format, $request[0], $request[1]);
+        $conn->execute();
+        if($conn->affected_rows === 1){
+            return true;
+        }
+    }
+
     public function escape($esc)
     {
         $conn = $this->_mysqli->real_escape_string($esc);

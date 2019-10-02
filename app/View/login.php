@@ -1,6 +1,6 @@
 <?php
 header('Content-type: application/json');
-Session::name("Sensations");
+Session::name("SENSATIONS");
 Session::start();
 
 if(validateParams(array("username","password"),$_POST)){
@@ -11,9 +11,10 @@ if(validateParams(array("username","password"),$_POST)){
     {
         $username = ( preg_match('/[A-Za-z0-9]$/',$_POST['username'] ) == true ) ? $_POST['username'] : false; //username can only have letters or number
         $password = ( preg_match('/^.*(?=.{6,10})(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9!@#$%]+$/',$_POST['password'] ) == true ) ? $_POST['password'] : false; //password can only have  1) 6-10 characters 2) At least one alpha AND one number 3) The following special chars are allowed (0 or more): !@#$%
+        $tokens = session_id();
 
         $login = new App\Controller\UserController();
-        $login->login($username,$password);
+        $login->login($username,$password,$tokens);
 
     } else {
         global $logger;
