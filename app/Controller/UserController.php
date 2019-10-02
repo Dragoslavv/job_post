@@ -16,20 +16,21 @@ class UserController extends Users {
         header('HTTP/1.1 ' . $this->client_code . ' ' . $this->message . " (" . $this->server_code . ")");
     }
 
-    public function register($firstname,$lastname,$mobileOrEmail,$gender,$birthday,$username,$password,$role = 'user')
+    public function register( $firstname, $lastname, $mobileOrEmail, $gender, $birthday, $username, $password, $role = 'user' )
     {
         global $db;
 
-        if(isset($role) && $role == 'admin' || $role == 'user'){
+        if( isset( $role ) && $role == 'admin' || $role == 'user')
+        {
 
-            $role   = $db->escape($role);
-            $firstname = $db->escape($firstname);
-            $lastname = $db->escape($lastname);
-            $mobileOrEmail   = $db->escape($mobileOrEmail);
-            $gender   = $db->escape($gender);
-            $birthday   = $db->escape($birthday);
-            $username   = $db->escape($username);
-            $password   = $db->escape($password);
+            $role       = $db->escape( $role );
+            $firstname  = $db->escape( $firstname );
+            $lastname   = $db->escape( $lastname );
+            $mobileOrEmail   = $db->escape( $mobileOrEmail );
+            $gender     = $db->escape( $gender );
+            $birthday   = $db->escape( $birthday );
+            $username   = $db->escape( $username );
+            $password   = $db->escape( $password );
 
             $register = $db->select("SELECT * FROM `web_users` WHERE `username` = '".$username."'");
 
@@ -37,12 +38,13 @@ class UserController extends Users {
                 'cost' => 11,
             ];
 
-            $hash = password_hash($password, PASSWORD_BCRYPT, $options);
+            $hash = password_hash( $password, PASSWORD_BCRYPT, $options );
 
-            if( $register == false ){
+            if( $register == false )
+            {
 
                $create = $db->insert_users('INSERT INTO `web_users` (`firstname`, `lastname`, `mobileOrEmail`, `gender`, `birthday`, `username`, `password`, `role`) 
-                         VALUES (?,?,?,?,?,?,?,?)', array($firstname,$lastname,$mobileOrEmail,$gender,$birthday,$username,$hash,$role),'ssssssss');
+                         VALUES (?,?,?,?,?,?,?,?)', array($firstname, $lastname, $mobileOrEmail, $gender, $birthday, $username, $hash, $role),'ssssssss');
 
                echo json_encode( array( "result" => $create ) );
             } else {
@@ -50,7 +52,7 @@ class UserController extends Users {
                 $logger->info('exists username ', $register );
 
                 $arr = array('result' => 'false', 'message' => 'exists username');
-                echo json_encode($arr);
+                echo json_encode( $arr );
             }
         } else {
             global $logger;
@@ -63,24 +65,26 @@ class UserController extends Users {
         return false;
     }
 
-    public function login($username,$password,$session_token){
+    public function login( $username, $password, $session_token )
+    {
 
         global $db;
 
-        $username   = $db->escape($username);
-        $password   = $db->escape($password);
-        $session_token   = $db->escape($session_token);
+        $username   = $db->escape( $username );
+        $password   = $db->escape( $password );
+        $session_token   = $db->escape( $session_token );
 
         $hash = $db->select("SELECT `username`,`password` FROM `web_users` WHERE `username` = '".$username."'");
 
-        $validatePassword = password_verify($password, $hash[0][1]);
+        $validatePassword = password_verify( $password, $hash[0][1] );
 
-        if($validatePassword == true && $hash[0][0] == $username){
+        if( $validatePassword == true && $hash[0][0] == $username )
+        {
 
             $login =  $db->select("SELECT `firstname`,`lastname`,`mobileOrEmail`,`gender`,`birthday`,`username`,`role`,`session_tokens`
                       FROM `web_users` WHERE `username` = '".$username."' AND `password` = '".$hash[0][1]."'");
 
-            $db->update_users( "UPDATE web_users SET session_tokens = ? WHERE username= ? LIMIT 1",array($session_token,$hash[0][0]),"ss");
+            $db->update_users( "UPDATE web_users SET session_tokens = ? WHERE username= ? LIMIT 1",array($session_token, $hash[0][0]),"ss");
 
             \Session::cookie( 3600 ); //lifetime cookie
             \Session::setOneParam('session_tokens', $session_token);
@@ -109,29 +113,5 @@ class UserController extends Users {
         \Session::delete($unset);
 
         return true;
-    }
-
-    public function allUsers($param){
-        var_dump($param);
-        global $logger;
-
-        $logger->info('User Controller');
-
-    }
-
-    public function destroy($param){
-        var_dump($param);
-        global $logger;
-
-        $logger->info('User Controller');
-
-    }
-
-    public function role($param){
-        var_dump($param);
-        global $logger;
-
-        $logger->info('User Controller');
-
     }
 }
