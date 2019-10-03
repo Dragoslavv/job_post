@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703a2753-ae6a-484a-b5db-b867a545dc09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Database/Database.php" afterDir="false" />
-    </list>
+    <list default="true" id="703a2753-ae6a-484a-b5db-b867a545dc09" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -248,18 +245,18 @@
       <workItem from="1568577943681" duration="6371000" />
       <workItem from="1568842962329" duration="7354000" />
       <workItem from="1569271110527" duration="12333000" />
-      <workItem from="1569417917917" duration="45175000" />
+      <workItem from="1569417917917" duration="46671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77708000" />
+    <option name="totallyTimeSpent" value="79204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905837" visible="true" weight="0.26360726" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905837" visible="true" weight="0.26360726" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50094163" side_tool="true" weight="0.26065302" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -272,7 +269,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24029382" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24029382" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -413,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
