@@ -48,10 +48,10 @@ class PostsController extends Posts {
                         $messageText2 = str_replace('$description',  $description, $messageText2);
 
 
-                    $this->sendEmail('gagipredojevic65@gmail.com','Globaltel93Gagi','Job Post',
+                    $this->sendEmail('YOUR EMAIL','YOUR PASS','Job Post',
                         'gagipredojevic65@gmail.com', 'gagipredojevic65@gmail.com','Job Post',$messageText);
 
-                        $this->sendEmail('gagipredojevic65@gmail.com','Globaltel93Gagi','Job Post',
+                        $this->sendEmail('YOUR EMAIL','YOUR PASS','Job Post',
                             $email, $email,'Job Post',$messageText2);
 
                     return "spam";
