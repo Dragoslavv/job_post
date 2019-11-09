@@ -11,9 +11,9 @@ use Monolog\Handler\FirePHPHandler;
 use App\Database\Database as Database;
 
 // Create the logger
-$logger = new Logger('sensations-logger');
+$logger = new Logger('jobPosts-logger');
 
-$logger->pushHandler(new StreamHandler('/var/log/sensations_debug.log', Logger::DEBUG));
+$logger->pushHandler(new StreamHandler('/var/log/jobPosts_debug.log', Logger::DEBUG));
 $logger->pushHandler(new FirePHPHandler());
 
 //DB instance

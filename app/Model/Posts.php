@@ -1,10 +1,10 @@
 <?php
 namespace App\Model;
 
-class Users{
+class Posts{
 
     protected static $fillable = [
-        'name', 'email', 'password','userimage'
+        'title', 'description', 'email','status'
     ];
 
 }

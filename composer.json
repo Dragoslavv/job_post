@@ -1,5 +1,5 @@
 {
-    "name": "dragoslav/senzations",
+    "name": "dragoslav/job_post",
     "authors": [
         {
             "name": "dragoslav",
@@ -10,15 +10,16 @@
         "illuminate/support": "^5.8",
         "illuminate/events": "^5.8",
         "illuminate/database": "^5.8",
-        "monolog/monolog": "^1.25"
+        "monolog/monolog": "^1.25",
+        "phpmailer/phpmailer": "^6.1",
+        "php": "^7.1"
     },
     "autoload": {
         "files": [
             "app/validationParams.php"
         ],
         "classmap": [
-            "app/Model",
-            "app/Session"
+            "app/Model"
         ],
         "psr-4": {
             "App\\": "app"

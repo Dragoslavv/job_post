@@ -9,7 +9,7 @@ class ComposerStaticInitff918005b247aaabddd91d34da707220
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        'ee6a839763265ee8a24ac94c34aff98b' => __DIR__ . '/../..' . '/app/validationParams.php',
+        '0b6206210a805f1e6402fa0e8ff1f847' => __DIR__ . '/../..' . '/app/validationParams.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -24,6 +24,7 @@ class ComposerStaticInitff918005b247aaabddd91d34da707220
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
@@ -76,6 +77,10 @@ class ComposerStaticInitff918005b247aaabddd91d34da707220
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -115,8 +120,7 @@ class ComposerStaticInitff918005b247aaabddd91d34da707220
     );
 
     public static $classMap = array (
-        'App\\Model\\Users' => __DIR__ . '/../..' . '/app/Model/Users.php',
-        'Session' => __DIR__ . '/../..' . '/app/Session/Session.php',
+        'App\\Model\\Posts' => __DIR__ . '/../..' . '/app/Model/Posts.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
